@@ -12,7 +12,7 @@ export const baseStyle = `
         /* font */
         --ff-primary: 'Hind', sans-serif;
 
-/*         --ff-body: var(--ff-primary);
+/*      --ff-body: var(--ff-primary);
         --ff-heading: var(--ff-primary); */
 
         --fw-regular: 400;
@@ -47,10 +47,11 @@ export const baseStyle = `
         }
     }
 
-    /* utility classes */
+    /* == utility classes == */
     .text-primary-400 {
-      color: var(--clr-primary-400)  
+      color: var(--clr-primary)  
     }
+    
     .text-accent-400 {
        color: var(--clr-accent-400) 
     }
@@ -66,39 +67,42 @@ export const baseStyle = `
 
     .bg-primary-400 {
       background-color: var(--clr-primary-400)  
-    
+    }
     .bg-accent-400 {
       background-color: var(--clr-accent-400) 
-    
+    }
     .bg-accent-100 {
       background-color: var(--clr-accent-100) 
-    
+    }
     .bg-neutral-100 {
        background-color: var(--clr-neutral-100)
-    
+    }
     .bg-neutral-900 {
       background-color: var(--clr-neutral-900)
-    
+    }
 
-
+      
     .fw-bold { font-weight: var(--fw-bold) }
     .fw-semi-bold { font-weight: var(--fw-semi-bold) }
     .fw-regular { font-weight: var(--fw-regular) }
 
     .fs-primary-heading: { 
-        font-size: var(--fs-primary-heading)
+      font-size: var(--fs-primary-heading)
     }
     .fs-secondary-heading: { 
-        font-size: var(--fs-primary-heading)
+      font-size: var(--fs-primary-heading)
     }
-
+    
     .fs-300 { font-size: var(--fs-300) }
     .fs-400 { font-size: var(--fs-400) }
     .fs-500 { font-size: var(--fs-500) }
     .fs-600 { font-size: var(--fs-600) }
-
-    .flex {
-        display: flex;
+    
+    .flex { display: flex }
+    .center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 `
 
