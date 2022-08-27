@@ -5,7 +5,7 @@ export const baseStyle = `
         /* colors */
         --clr-accent-400: #808;
         --clr-accent-100: #880;
-        --clr-primary: red;
+        --clr-primary: #ebbd34;
         --clr-neutral-100: #999;
         --clr-neutral-900: #222;
         
@@ -98,12 +98,27 @@ export const baseStyle = `
     .fs-500 { font-size: var(--fs-500) }
     .fs-600 { font-size: var(--fs-600) }
     
-    .flex { display: flex }
+    .fs-nav { font-size: var(--fs-nav) }
+    .flex { 
+      display: flex;
+      gap: var(--gap, 1rem);
+    }
+    .grid {
+      display: grid;
+      gap: var(--gap, 1rem);
+    }
+    .d-block {
+      display: block;
+    }
     .center {
       display: flex;
       align-items: center;
       justify-content: center;
     }
+
+    .flow > *:where(:not(:first-child)) {
+      margin-top: var(--flow-space, 1rem);
+  }
 `
 
 
