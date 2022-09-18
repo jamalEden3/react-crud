@@ -8,6 +8,14 @@ export const baseStyle = `
         --clr-primary: #ebbd34;
         --clr-neutral-100: #999;
         --clr-neutral-900: #222;
+        --clr-rose: #ffeeee;
+        --clr-bg-1: #C8F3C3;
+        --clr-bg-2: #FDDC8D;
+        --clr-bg-3: #BFB5FE;
+        --clr-light-grey: #d6d6d6;
+        --clr-light-blue: #F2F2F2;
+        --clr-white: #fff;
+
         
         /* font */
         --ff-primary: 'Hind', sans-serif;
@@ -20,7 +28,7 @@ export const baseStyle = `
         --fw-bold: 700;
 
         
-        --fs-300: 0.125rem;
+        --fs-300: 0.5rem;
         --fs-400: 0.875rem;
         --fs-500: 0.9375rem;
         --fs-600: 1rem;
@@ -35,15 +43,17 @@ export const baseStyle = `
         --fs-button: var(--fs-300);
     }
 
-    @media(min-width: 50em) {
+    @media(min-width: 40em) {
         :root {
-            --fs-700: 3.5rem;
+            --fs-300: 0.7rem;
+            --fs-500: 1.5rem;
             --fs-600: 2.5rem;
+            --fs-700: 3.5rem;
 
-            --fs-body: var(--fs-500);
+            /* --fs-body: var(--fs-500);
             --fs-primary-headin: var(--fs-900);
             --fs-secondary-headin: var(--fs-800);
-            --fs-nav: var(--fs-300);
+            --fs-nav: var(--fs-300); */
         }
     }
 
@@ -97,7 +107,8 @@ export const baseStyle = `
     .fs-400 { font-size: var(--fs-400) }
     .fs-500 { font-size: var(--fs-500) }
     .fs-600 { font-size: var(--fs-600) }
-    
+    .fs-700 { font-size: var(--fs-700) }
+
     .fs-nav { font-size: var(--fs-nav) }
     .flex { 
       display: flex;
@@ -118,6 +129,11 @@ export const baseStyle = `
 
     .flow > *:where(:not(:first-child)) {
       margin-top: var(--flow-space, 1rem);
+  }
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `
 

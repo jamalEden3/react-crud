@@ -33,8 +33,9 @@ export const reset = `
     html:focus-within {
         scroll-behavior: smooth;
     }
-    a:not([class]) {
-        text-decoration-skip-ink: auto;
+    a {
+        color: inherit;
+        text-decoration: inherit
     }
     input, button, textarea, select {
       font: inherit;

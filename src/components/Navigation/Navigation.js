@@ -12,7 +12,7 @@ function Navigation() {
   return (
     <Wrapper className='flex'>
       <div className='nav-search flex'>
-        <input type="text" placeholder='search ...' className='bg-neutral-100'/>
+        <input type="text" placeholder='search ...' />
         <SearchIcon className="search-icon" />
       </div>
       <ul className='nav-items flex fs-nav' role="list">
@@ -37,15 +37,18 @@ const Wrapper = styled.nav`
     .nav-search {
       position: relative;
 
+
+
       .search-icon {
         position: absolute;
         right: 10px;
         top: 5px;
+        cursor: pointer;
       }
       input {
         border-radius: 5px;
         outline: none;
-        border: none;
+        border: 1px solid #777;
         padding: 5px 10px;
   
           &::placeholder {

@@ -20,7 +20,7 @@ const Sidebar = () => {
             </Link>
         </h1>
         <div>
-            <ul role="list" className='flex center fs-500 flow'>
+            <ul role="list" className='flex center fs-300 flow'>
                 <li className='active'><HouseSidingIcon /><span>home</span></li>
                 <li><Person4Icon /><span>account</span></li>
                 <li><WalletIcon /><span>wallets</span></li>
@@ -42,7 +42,7 @@ const Wrapper = styled.aside`
 
     flex: 1;
     min-height: 100vh;
-    border-right: 1px solid #000;
+    border-right: 1px solid #999;
     flex-direction: column;
     justify-content: space-around;
     --flow-space: 1rem;
