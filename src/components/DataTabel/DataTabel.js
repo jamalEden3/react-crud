@@ -11,12 +11,12 @@ const DataTabel = () => {
     {
       field: 'action',
       headerName: 'Action',
-      width: 400,
+      width: 200,
       renderCell: () => {
         return (
-          <div className='cta'>
-            <button classNAme="btn .view">View</button>
-            <button classNAme="btn .delete">Delete</button>
+          <div className='cta flex'>
+            <button className="btn view">View</button>
+            <button className="btn delete">Delete</button>
           </div>
         )
       }
@@ -24,11 +24,11 @@ const DataTabel = () => {
   ]
 
   return (
-    <Wrapper style={{ height: 600, width: '100%' }}>
+    <Wrapper style={{ height: 500, width: '100%' }}>
         <DataGrid
             rows={userRows}
             columns={userColumns.concat(actionsCell)}
-            pageSize={6}
+            pageSize={7}
             rowsPerPageOptions={[9]}
             checkboxSelection
       />
@@ -60,13 +60,22 @@ const Wrapper = styled.article`
       
     }
 
-    .btn {
+    .cta {
+      --gap: 1.2rem;
       .view {
-        border: 2px solid green;
+        background-color: green;
       }
       .delete {
-        border: 2px solid red;
+        background-color: red;
       }
+    }
+    .btn {
+      background: none;
+      border: 0;
+      cursor: pointer;
+      color: #fff;
+      border-radius: 5px;
+      padding: .7rem 1.2rem;
     }
     
 `

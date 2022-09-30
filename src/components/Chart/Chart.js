@@ -40,12 +40,12 @@ const data = [
     amt: 2500,
   }
 ];
-const Chart = () => {
+const Chart = ({ aspect, title }) => {
   return (
     <Wrapper >
-      <h2>Last 6 months revenue</h2>
-      <div style={{width: '100%', height: 300}}>
-        <ResponsiveContainer>
+      <h2></h2>
+      
+        <ResponsiveContainer width="100%" aspect={aspect} >
           <AreaChart
             data={data}
             margin={{
@@ -62,7 +62,7 @@ const Chart = () => {
             <Area type="monotone" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
           </AreaChart>
         </ResponsiveContainer>
-      </div>
+     
     </Wrapper>
   )
 }

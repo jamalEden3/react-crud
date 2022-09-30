@@ -39,7 +39,10 @@ const Sidebar = () => {
 }
 
 const Wrapper = styled.aside`
-
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fff;
     flex: 1;
     min-height: 100vh;
     border-right: 1px solid #999;
