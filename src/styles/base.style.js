@@ -117,6 +117,7 @@ export const baseStyle = `
     .grid {
       display: grid;
       gap: var(--gap, 1rem);
+      align-items: center;
     }
     .d-block {
       display: block;
@@ -127,14 +128,38 @@ export const baseStyle = `
       justify-content: center;
     }
 
+    .relative {
+      position: relative;
+    }
+    .fixed {
+      position: fixed;
+    }
+
     .flow > *:where(:not(:first-child)) {
       margin-top: var(--flow-space, 1rem);
   }
-  .center {
+
+
+  .activeLink {
     display: flex;
-    justify-content: center;
     align-items: center;
-  }
+    gap: 5;
+    padding-left: 1rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.5rem;
+    margin: 0.5rem;
+   }
+
+   .normalLink {
+    display: flex;
+    align-items: center;
+    gap: 5;
+    padding-left: 1rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.5rem;
+    margin: 0.5rem;
+    color: #555;
+   }
 `
 
 

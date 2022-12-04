@@ -40,4 +40,9 @@ export const reset = `
     input, button, textarea, select {
       font: inherit;
     }
+    button {
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
 `
