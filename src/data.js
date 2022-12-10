@@ -30,7 +30,8 @@ export  const links = [
            },
            {
             link: 'messages',
-            icon: <FiMessageSquare />
+            icon: <FiMessageSquare />,
+            new: true,
            },
            {
             link: 'card',
@@ -49,7 +50,8 @@ export  const links = [
            },
            {
             link: 'settings',
-            icon: <CiSettings />
+            icon: <CiSettings />,
+            new: true,
            }
         ]
     },

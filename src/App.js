@@ -2,16 +2,17 @@ import styled from 'styled-components';
 
 import {Sidebar} from './components';
 
+import { useStateContext } from './contexts/ContextProvider';
+
 import { AiFillSetting } from "react-icons/ai";
-
-
 
 import { GlobalStyle } from './styles/gobal.style';
 import { Routes, Route } from "react-router-dom";
 
 function App() {
 
-  const activeMenu = true;
+  const { activeMenu } = useStateContext();
+
     return (
       <>
         <GlobalStyle />
@@ -69,6 +70,9 @@ const Wrapper = styled.div`
       background-color: #333;
     }
   }
+  .sidebar {
+    transition: 0.05s;
+  }
   .sidebar-visible {
     width: 18rem;
     border: 1px solid #000;
@@ -82,7 +86,6 @@ const Wrapper = styled.div`
   .nav-box {
     width: 100%;
     height: 100vh;
-    border: 2px solid red;
 
     &.menuOpen {
       margin-left: 18rem;

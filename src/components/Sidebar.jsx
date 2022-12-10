@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+
+import { useStateContext } from '../contexts/ContextProvider';
+
 import { AiOutlineCloseSquare } from "react-icons/ai";
 import { BsShop } from "react-icons/bs";
 import { BiBowlingBall } from "react-icons/bi";
@@ -12,9 +15,8 @@ import { links } from '../data';
 
 
 function Sidebar() {
-    const activeMenu = true;
-
-    
+    const { activeMenu, setActiveMenu } = useStateContext();
+    console.log(setActiveMenu)
   return (
     <Wrapper>
         {
@@ -23,7 +25,7 @@ function Sidebar() {
                 <Link to='/' onClick={() => {}} className='flex logo' >
                     <BiBowlingBall /> <span>Nulia</span>
                 </Link>
-                <button type='button' onClick={() => {console.log('closed')}} className=''>
+                <button type='button' onClick={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)} className=''>
                     <AiOutlineCloseSquare />
                 </button>
              </div>   
@@ -44,8 +46,10 @@ function Sidebar() {
                                 to={`/${item.link}`}
                                 onClick={() => {}}    
                                 >
-                                <span>{item.icon}</span>
-                                <h3>{item.link}</h3>
+                                    <span>{item.icon}</span>
+                                    <h3>{item.link}</h3>
+                                {item.new && <span className='new-feature'>new</span>}
+                                
                             </NavLink>
                         ))}
                    </div>
@@ -56,14 +60,15 @@ function Sidebar() {
 }
 
 const Wrapper = styled.aside`
-   margin-left: 0.75rem;
-   height: 100vh;
-   overflow: auto;
-   padding-bottom: 2.5rem;
-   margin-top: 1rem;
-   ::-webkit-scrollbar {
+    transition: 0.1s;
+    margin-left: 0.75rem;
+    height: 100vh;
+    overflow: auto;
+    padding-bottom: 2.5rem;
+    margin-top: 1rem;
+    ::-webkit-scrollbar {
     width: 20px;
-  }
+    }
   
 
 
@@ -105,8 +110,21 @@ const Wrapper = styled.aside`
             margin-bottom: 0.75rem;
             font-size: .8rem;
             font-weight: bold;
+            letter-spacing: 0.05rem;
+
+        }
+        span {
+            margin-right: 10px;
         }
 
+        .new-feature {
+            margin-left: 50px;
+            background-color: red;
+            padding: 0px 10px;
+            border-radius: 38px;
+            color: #fff;
+            font-size: 14px;
+        }
         .link {
             align-items: center;
             cursor: pointer;
