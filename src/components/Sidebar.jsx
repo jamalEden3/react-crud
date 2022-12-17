@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -12,17 +12,45 @@ import { BiBowlingBall } from "react-icons/bi";
 import { links } from '../data';
 
 
-
-
 function Sidebar() {
-    const { activeMenu, setActiveMenu } = useStateContext();
-    console.log(setActiveMenu)
+    const { activeMenu, setActiveMenu, screenSize, setScreenSize } = useStateContext();
+
+    
+
+  /* useEffect(() => {
+    const handleScreenSize = () => {
+      setScreenSize(window.innerWidth);
+
+      window.addEventListener('resize', handleScreenSize)
+    }
+  
+    return () => {
+      window.removeEventListener('resize', handleScreenSize)
+    }
+  }, []);
+
+
+  useEffect(() => {
+    if (screenSize <= 900) {
+      setActiveMenu(false);
+    } else {
+      setActiveMenu(true);
+    }
+  },[screenSize]); */
+
+
+  const handleClosedSidebar = () => {
+    if (activeMenu && screenSize <= 900) {
+        setActiveMenu(false)
+    }
+  }
+
   return (
     <Wrapper>
         {
             activeMenu && (
              <div className='active-menu flex'>
-                <Link to='/' onClick={() => {}} className='flex logo' >
+                <Link to='/' onClick={handleClosedSidebar} className='flex logo' >
                     <BiBowlingBall /> <span>Nulia</span>
                 </Link>
                 <button type='button' onClick={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)} className=''>
@@ -44,7 +72,7 @@ function Sidebar() {
                                 }
                                 key={item.link}
                                 to={`/${item.link}`}
-                                onClick={() => {}}    
+                                onClick={handleClosedSidebar}    
                                 >
                                     <span>{item.icon}</span>
                                     <h3>{item.link}</h3>
@@ -106,7 +134,7 @@ const Wrapper = styled.aside`
 
         .list-title {
             text-transform: uppercase;
-            color: #888;
+            color: #8a8a8a;
             margin-bottom: 0.75rem;
             font-size: .8rem;
             font-weight: bold;

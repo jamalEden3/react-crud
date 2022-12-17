@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import {Sidebar} from './components';
+import {Sidebar, Navbar} from './components';
 
 import { useStateContext } from './contexts/ContextProvider';
 
@@ -38,11 +38,7 @@ function App() {
 
           {/* Navbar */}
           <div className={`nav-box ${activeMenu ? 'menuOpen' : 'menuClosed'}`}>
-            <nav
-             className='fixed'
-            >
-              Navbar
-            </nav>
+            <Navbar />
           </div>{/* navbar div */}
 
           <Routes>
@@ -75,7 +71,7 @@ const Wrapper = styled.div`
   }
   .sidebar-visible {
     width: 18rem;
-    border: 1px solid #000;
+    border-right: 2px solid #888;
   }
 
   .sidebar-invisible {
@@ -86,6 +82,7 @@ const Wrapper = styled.div`
   .nav-box {
     width: 100%;
     height: 100vh;
+    padding-inline: 1rem;
 
     &.menuOpen {
       margin-left: 18rem;
@@ -95,9 +92,7 @@ const Wrapper = styled.div`
       flex: 2;
     }
     nav {
-      border: 3px solid yellow;
       width: 100%;
-      
     }
   }
   

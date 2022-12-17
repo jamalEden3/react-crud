@@ -1,16 +1,40 @@
-import React, { createContext, useContext, useState } from "react";
+import React,{ createContext, useContext, useState, useEffect } from "react";
 
 
 const StateContext = createContext();
 
-
+const intialState = {
+    chat: false,
+    cart: false,
+    userprofile:false,
+    notification: false 
+}
 
 export const ContextProvider = ({ children }) => {
 
     const [activeMenu, setActiveMenu] = useState(true);
+    const [btnIsClicked, setbtnIsClicked] = useState(intialState);
+    const [screenSize, setScreenSize] = useState(window.innerWidth);
+
+    const handleClicked = (clikced) => {
+        setbtnIsClicked({...intialState, [clikced]: true});
+    }
+
+    /* useEffect(() => {
+        const handleClosedBox = () => setbtnIsClicked(intialState);
+        window.addEventListener('click', handleClosedBox);
+        handleClosedBox();
+
+      return () => {
+        window.removeEventListener('click', handleClosedBox);
+      }
+    }, [])
+     */
+
+
 
     return (
-        <StateContext.Provider value={{ activeMenu, setActiveMenu }}>
+        <StateContext.Provider value={{ activeMenu, setActiveMenu, handleClicked, btnIsClicked, screenSize, setScreenSize }}>
             { children }
         </StateContext.Provider>
     )
