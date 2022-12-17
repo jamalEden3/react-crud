@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
-import {Sidebar, Navbar} from './components';
+import { Sidebar, Navbar } from './components';
+import { Ecommerce } from './pages'
+
+
 
 import { useStateContext } from './contexts/ContextProvider';
 
@@ -39,12 +42,13 @@ function App() {
           {/* Navbar */}
           <div className={`nav-box ${activeMenu ? 'menuOpen' : 'menuClosed'}`}>
             <Navbar />
-          </div>{/* navbar div */}
 
           <Routes>
             {/* dashboard */}
-            
+            <Route path="/" element={<Ecommerce />} />
+            <Route path='/ecommrce' element={<Ecommerce />} />
           </Routes>
+          </div>{/* navbar div */}
         </Wrapper>
       </>
     );
