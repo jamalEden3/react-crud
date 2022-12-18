@@ -5,4 +5,5 @@ export { default as Chat } from './Chat';
 export { default as Notification } from './Notification';
 export { default as Cart } from './Cart';
 export { default as UserProfile } from './UserProfile';
-export { default as Ecommerce } from '../pages/Ecommerce';
+export { default as Button } from './Button';
+

@@ -1,9 +1,15 @@
-import React from 'react'
+import React from 'react';
+import styled from 'styled-components';
 
-function Button() {
+function Button({ bgColor, color, size, borderRad, content }) {
   return (
-    <div>Button</div>
+    <Wrapper style={{backgroundColor: bgColor, color: color, size: size, borderRadius: borderRad, width: size}}>
+      {content}
+    </Wrapper>
   )
 }
 
+const Wrapper = styled.button`
+
+`
 export default Button

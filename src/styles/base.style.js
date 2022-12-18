@@ -135,8 +135,11 @@ export const baseStyle = `
       position: fixed;
     }
 
-    .flow > *:where(:not(:first-child)) {
-      margin-top: var(--flow-space, 1rem);
+    .flow-y > *:where(:not(:first-child)) {
+      margin-top: var(--flow-y-space, 1rem);
+  }
+    .flow-x > *:where(:not(:first-child)) {
+      margin-left: var(--flow-x-space, 1rem);
   }
 
 
