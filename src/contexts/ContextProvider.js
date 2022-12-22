@@ -15,9 +15,14 @@ export const ContextProvider = ({ children }) => {
     const [activeMenu, setActiveMenu] = useState(true);
     const [btnIsClicked, setbtnIsClicked] = useState(intialState);
     const [screenSize, setScreenSize] = useState(window.innerWidth);
+    
 
     const handleClicked = (clikced) => {
         setbtnIsClicked({...intialState, [clikced]: true});
+    }
+
+    const resetNavButton = (clicked) => {
+        setbtnIsClicked({ ...intialState, [clicked]: false })
     }
 
     /* useEffect(() => {
@@ -34,7 +39,15 @@ export const ContextProvider = ({ children }) => {
 
 
     return (
-        <StateContext.Provider value={{ activeMenu, setActiveMenu, handleClicked, btnIsClicked, screenSize, setScreenSize }}>
+        <StateContext.Provider value={{ 
+            activeMenu, 
+            setActiveMenu,
+            handleClicked,
+            btnIsClicked,
+            screenSize,
+            setScreenSize,
+            resetNavButton,
+            btnIsClicked }}>
             { children }
         </StateContext.Provider>
     )

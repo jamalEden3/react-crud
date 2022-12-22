@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { Sidebar, Navbar } from './components';
-import { Ecommerce } from './pages'
+import { Dashboard } from './pages'
 
 
 
@@ -45,8 +45,8 @@ function App() {
 
           <Routes>
             {/* dashboard */}
-            <Route path="/" element={<Ecommerce />} />
-            <Route path='/ecommrce' element={<Ecommerce />} />
+            <Route path="/" element={<Dashboard />} />
+            <Route path='/dashboard' element={<Dashboard />} />
           </Routes>
           </div>{/* navbar div */}
         </Wrapper>
@@ -57,6 +57,7 @@ function App() {
 const Wrapper = styled.div`
   display: flex;
   position: relative;
+  background-color: #f6f6f6;
 
   .setting-icon {
     bottom: 10px;
@@ -75,7 +76,7 @@ const Wrapper = styled.div`
   }
   .sidebar-visible {
     width: 18rem;
-    border-right: 2px solid #888;
+    background-color: #fff;
   }
 
   .sidebar-invisible {

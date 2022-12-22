@@ -8,6 +8,8 @@ import { BiMessageSquare } from "react-icons/bi";
 import { AiOutlineUser } from "react-icons/ai";
 import { GrNotification } from "react-icons/gr";
 import { BsFillCartPlusFill } from "react-icons/bs";
+import { AiOutlineCloseCircle } from "react-icons/ai";
+
 
 /* componnts */
 import { Chat, Cart, Notification, UserProfile } from './index';
@@ -26,7 +28,7 @@ const NavButton = ({color, customFunc, icon}) => (
 
 function Navbar() {
   
-  const { activeMenu, setActiveMenu, handleClicked, btnIsClicked, screenSize, setScreenSize } = useStateContext();
+  const { activeMenu, setActiveMenu, handleClicked, btnIsClicked, screenSize, setScreenSize, resetNavButton } = useStateContext();
 
 
   useEffect(() => {
@@ -66,7 +68,12 @@ function Navbar() {
               color="#808" 
               customFunc={() => handleClicked("notification")} 
               icon={<GrNotification />} />
-              {btnIsClicked.notification && <Notification className='nav-link' />}
+              {btnIsClicked.notification && 
+              <div className='nav-btn-box flex'>
+                <Notification className='nav-link' />
+                <button onClick={() => resetNavButton("notification")}><AiOutlineCloseCircle /></button>
+              </div>}
+              
           </div>
           
           <div className="nav-item">
@@ -74,14 +81,24 @@ function Navbar() {
               color="#808" 
               customFunc={() => handleClicked("chat")} 
               icon={<BiMessageSquare />} />
-              {btnIsClicked.chat && <Chat className='nav-link' />}
+              {btnIsClicked.chat && 
+              <div className='nav-btn-box flex'>
+                <Chat className='nav-link' />
+                <button onClick={() => resetNavButton("chat")}><AiOutlineCloseCircle /></button>
+              </div>
+              }
           </div>
           <div className="nav-item">
             <NavButton 
               color="#808" 
               customFunc={() => handleClicked("cart")} 
               icon={<BsFillCartPlusFill />} />
-              {btnIsClicked.cart && <Cart className='nav-link' />}
+              {btnIsClicked.cart && 
+              <div className='nav-btn-box flex'>
+                <Cart className='nav-link' />
+                <button onClick={() => resetNavButton("cart")}><AiOutlineCloseCircle /></button>
+              </div>
+              }
           </div>
           <div className='nav-item'>
             <div className='user'>
@@ -128,6 +145,20 @@ const Wrapper = styled.nav`
     .nav-button {
 
     }
+
+    .nav-btn-box {
+      z-index: 99999;
+      border: 3px solid blue;
+      position: absolute;
+      top: 40px;
+      left: 0;
+      background-color: #fff;
+      align-items: flex-start;
+      padding: 1px 20px 10px;
+      border-radius: 2rem 8rem 8rem 9rem / 3rem 11rem 6rem 5rem;
+    }
+
+  
 `
 
 export default Navbar
