@@ -45,7 +45,7 @@ function App() {
 
           <Routes>
             {/* dashboard */}
-            <Route path="/" element={<Dashboard />} />
+            <Route index element={<Dashboard />} />
             <Route path='/dashboard' element={<Dashboard />} />
           </Routes>
           </div>{/* navbar div */}
